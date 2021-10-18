@@ -1,0 +1,83 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by Fernflower decompiler)
+//
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class HelpTest {
+    Help help = new Help();
+
+    public HelpTest() {
+    }
+
+    @Test
+    public void TempTest() {
+        double temp1 = 36.6D;
+        Help var10000 = this.help;
+        Assert.assertEquals((long)Help.getTemperature(temp1), 0L);
+        double temp2 = 37.0D;
+        var10000 = this.help;
+        Assert.assertEquals((long)Help.getTemperature(temp2), 1L);
+        double temp3 = 36.0D;
+        var10000 = this.help;
+        Assert.assertEquals((long)Help.getTemperature(temp3), -1L);
+    }
+
+    @Test
+    public void orviTest() {
+        Help var10000 = this.help;
+        Assert.assertTrue(Help.orvi("Да"));
+        var10000 = this.help;
+        Assert.assertFalse(Help.orvi("Нет"));
+    }
+
+    @Test
+    public void DiabetTest() {
+        Help var10000 = this.help;
+        Assert.assertEquals((long)Help.diabet("Да", "Нет"), 0L);
+        var10000 = this.help;
+        Assert.assertEquals((long)Help.diabet("Нет", "Нет"), -1L);
+        var10000 = this.help;
+        Assert.assertEquals((long)Help.diabet("Нет", "Да"), 0L);
+        var10000 = this.help;
+        Assert.assertEquals((long)Help.diabet("Да", "Да"), 1L);
+    }
+
+    @Test
+    public void RotavirusTest() {
+        Help var10000 = this.help;
+        Assert.assertEquals((long)Help.rvirus("Да", "Нет"), 0L);
+        var10000 = this.help;
+        Assert.assertEquals((long)Help.rvirus("Нет", "Да"), 0L);
+        var10000 = this.help;
+        Assert.assertEquals((long)Help.rvirus("Нет", "Нет"), -1L);
+        var10000 = this.help;
+        Assert.assertEquals((long)Help.rvirus("Да", "Да"), 1L);
+    }
+
+    @Test
+    public void simptomsTest() {
+        Help var10000 = this.help;
+        Assert.assertTrue(Help.simptoms("Да"));
+        var10000 = this.help;
+        Assert.assertFalse(Help.simptoms("Нет"));
+    }
+
+    @Test
+    public void diagnoseTest() {
+        Help var10000 = this.help;
+        Assert.assertEquals(Help.diagnose(1, true, -1, -1, true), "У Вас, скорее всего, ОРВИ. Обратитесь к врачу.");
+        var10000 = this.help;
+        Assert.assertEquals(Help.diagnose(1, true, -1, 1, true), "У Вас, скорее всего, ротавирус. Обратитесь к врачу.");
+        var10000 = this.help;
+        Assert.assertEquals(Help.diagnose(1, false, 1, -1, true), "У Вас может быть диабет! Сдайте кровь на анализ.");
+        var10000 = this.help;
+        Assert.assertEquals(Help.diagnose(0, false, -1, -1, false), "Вы здоровы");
+        var10000 = this.help;
+        Assert.assertEquals(Help.diagnose(-1, false, -1, -1, true), "У Вас лёгкое недомогание");
+        var10000 = this.help;
+        Assert.assertEquals(Help.diagnose(0, true, -1, -1, false), "У Вас лёгкая форма ОРВИ");
+    }
+}
